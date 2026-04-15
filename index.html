@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🐠 Aquarium</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="scene">
+  <video id="videoEl" autoplay muted playsinline></video>
+  <div id="waterOverlay"></div>
+  <div id="caustics"></div>
+
+  <svg class="sw" style="left:4%;height:130px" viewBox="0 0 40 130"><path d="M20 130 Q4 98 20 75 Q36 52 20 28 Q4 8 20 0" stroke="#1a7a3a" stroke-width="5" fill="none" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" values="-5 20 130;5 20 130;-5 20 130" dur="3.3s" repeatCount="indefinite"/></path></svg>
+  <svg class="sw" style="left:9%;height:90px"  viewBox="0 0 30 90"><path d="M15 90 Q2 66 15 48 Q28 30 15 8"  stroke="#166b31" stroke-width="4" fill="none" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" values="4 15 90;-4 15 90;4 15 90" dur="2.9s" repeatCount="indefinite"/></path></svg>
+  <svg class="sw" style="right:5%;height:145px" viewBox="0 0 40 145"><path d="M20 145 Q4 108 20 82 Q36 56 20 28 Q4 4 20 0" stroke="#1d8c42" stroke-width="6" fill="none" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" values="6 20 145;-4 20 145;6 20 145" dur="3.6s" repeatCount="indefinite"/></path></svg>
+  <svg class="sw" style="right:11%;height:100px" viewBox="0 0 30 100"><path d="M15 100 Q2 74 15 54 Q28 34 15 8" stroke="#157535" stroke-width="4" fill="none" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" values="-5 15 100;5 15 100;-5 15 100" dur="4.1s" repeatCount="indefinite"/></path></svg>
+  <svg class="sw" style="left:48%;height:78px"  viewBox="0 0 30 78"><path d="M15 78 Q2 58 15 40 Q28 22 15 4"  stroke="#19703c" stroke-width="3" fill="none" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" values="3 15 78;-4 15 78;3 15 78" dur="3.1s" repeatCount="indefinite"/></path></svg>
+
+  <canvas id="mainCanvas"></canvas>
+  <div id="vignette"></div>
+  <div id="handDot"></div>
+  <div id="title">🐠 Interactive Aquarium</div>
+  <div id="ui">Starting camera…</div>
+  <div id="foodHint">Click to drop food</div>
+</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

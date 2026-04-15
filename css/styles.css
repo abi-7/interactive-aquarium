@@ -1,0 +1,113 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #000; overflow: hidden; width: 100vw; height: 100vh; }
+
+#scene {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#videoEl {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+  filter: saturate(0.35) brightness(0.5) hue-rotate(185deg);
+  z-index: 0;
+}
+
+#mainCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+#waterOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(0,25,70,0.6) 0%,
+    rgba(0,55,110,0.38) 50%,
+    rgba(0,70,90,0.5) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+#caustics {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.15;
+  background:
+    radial-gradient(ellipse 90px 45px at 20% 12%, rgba(100,210,255,1) 0%, transparent 70%),
+    radial-gradient(ellipse 70px 35px at 60% 7%,  rgba(100,220,255,1) 0%, transparent 70%),
+    radial-gradient(ellipse 80px 40px at 82% 18%, rgba(80,190,255,1)  0%, transparent 70%);
+  animation: caustic 7s ease-in-out infinite alternate;
+}
+@keyframes caustic {
+  0%   { transform: translate(0,0)       scale(1);    opacity:.12; }
+  100% { transform: translate(12px,10px) scale(1.08); opacity:.2;  }
+}
+
+#vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 85% 85% at 50% 50%, transparent 45%, rgba(0,8,35,0.75) 100%);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.sw { position:absolute; bottom:0; z-index:5; pointer-events:none; }
+
+#foodHint {
+  position: absolute;
+  top: 16px; right: 16px;
+  color: rgba(160,230,255,0.5);
+  font: 11px 'Georgia', serif;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  z-index: 9;
+  text-shadow: 0 0 8px rgba(0,160,255,.5);
+}
+
+#ui {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(160,230,255,0.8);
+  font: 12px/1 'Georgia', serif;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  z-index: 9;
+  text-shadow: 0 0 10px rgba(0,170,255,.9);
+  text-align: center;
+  white-space: nowrap;
+}
+
+#handDot {
+  position: absolute;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,180,0.95) 0%, rgba(255,200,50,0.35) 60%, transparent 100%);
+  transform: translate(-50%,-50%);
+  pointer-events: none;
+  z-index: 8;
+  display: none;
+  box-shadow: 0 0 20px 8px rgba(255,230,80,0.55);
+}
+
+#title {
+  position:absolute; top:16px; left:50%; transform:translateX(-50%);
+  color:rgba(150,225,255,0.55); font:11px 'Georgia',serif;
+  letter-spacing:.3em; text-transform:uppercase; z-index:9;
+  text-shadow:0 0 10px rgba(0,160,255,.6);
+  white-space: nowrap;
+}
