@@ -26,16 +26,6 @@ aquarium/
     └── utils.js          # Colour helpers and coordinate mapping
 ```
 
-## Running Locally
-
-You need a local web server because ES modules don't work over `file://`.
-
-```bash
-npx serve . -p 8080
-```
-
-Then open **http://localhost:8080** in your browser and allow camera access when prompted.
-
 ## Controls
 
 | Action | Effect |
