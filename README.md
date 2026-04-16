@@ -15,8 +15,7 @@ A browser-based interactive aquarium with hand tracking. Move your hand in front
 ```
 aquarium/
 ├── index.html
-├── css/
-│   └── styles.css
+├── styles.css  
 └── js/
     ├── main.js           # Entry point — canvas, render loop, scene setup
     ├── fish.js           # Fish class and species definitions
